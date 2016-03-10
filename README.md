@@ -61,6 +61,6 @@
 ···</div>
 
 ###使用方法
-···javascript
+```javascript
 jQuery(".category-box").tab({titCell:'.nav-index li',mainCell:'.nav-main'}); //javascript
-···
+```
