@@ -7,7 +7,8 @@
 	$.fn.tab=function(options){
 		$.fn.tab.defaults={
 			titCell:'.tabH li',
-			mainCell:'.tabBd'
+			mainCell:'.tabBd',
+			titCellH:75
 		};
 
 		return this.each(function(){
@@ -16,9 +17,10 @@
 			var titCell = $(opts.titCell,taber);
 			var mainCell = $(opts.mainCell,taber);
 			var mChildBox = mainCell.children();
-			var titCellH = titCell.height();
-			var titCellPt = parseInt(titCell.css('padding-top'));
-			var titCellPb = parseInt(titCell.css('padding-bottom'));
+			var titCellH = opts.titCellH;
+			// var titCellH = titCell.height();
+			// var titCellPt = parseInt(titCell.css('padding-top'));
+			// var titCellPb = parseInt(titCell.css('padding-bottom'));
 			var changeClass = function(i){
 				titCell.eq(i).addClass('on').siblings().removeClass('on');
 				mChildBox.eq(i).show().siblings().hide();
@@ -40,7 +42,8 @@
 
 			var subChild,subChildSize,maxH,width,height;
 			var a = new Array();
-			height = titCellH + titCellPt + titCellPb;
+			// height = titCellH + titCellPt + titCellPb;
+			height = titCellH;
 			//先显示，获取高度
 			mChildBox.css({ visibility: "hidden", display: "block" });
 
